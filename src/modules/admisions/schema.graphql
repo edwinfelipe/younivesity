@@ -1,0 +1,30 @@
+type Student {
+  id: ID
+  firstname: String
+  middlename: String
+  lastname: String
+  lastname2: String
+  birthDate: String
+  code: String
+}
+
+input RegisterStudentInput {
+  firstname: String
+  middlename: String
+  lastname: String
+  lastname2: String
+  birthDate: String
+}
+
+input StudentWhereInput {
+  id: ID
+}
+
+type Mutation {
+  registerStudent(data: RegisterStudentInput!): Student!
+}
+
+type Query {
+  getStudents(where: StudentWhereInput!): [Student]!
+  getStudent(id: ID!): Student!
+}

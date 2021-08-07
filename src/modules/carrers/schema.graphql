@@ -1,0 +1,23 @@
+type Carrer {
+    id: ID
+    name: String
+}
+
+input CarrerInput{
+    name: String!
+}
+
+input CarrerWhereInput {
+    id: ID
+    name: String
+}
+
+
+type Mutation {
+    createCarrer(data: CarrerInput!): Carrer!
+}
+
+type Query {
+    getCarrers(where: CarrerWhereInput): [Carrer]!
+    getCarrer(id: ID!): Carrer!
+}
